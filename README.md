@@ -23,7 +23,7 @@ Build a portfolio-ready application where users can:
 
 ## Current status
 
-**Iteration 3 — JavaScript data rendering**
+**Iteration 4 — live JavaScript search**
 
 This repository documents the full learning path from the first HTML page to a production-style React application. Work is organised through GitHub Issues and small, meaningful commits.
 
