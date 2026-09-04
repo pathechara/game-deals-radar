@@ -4,84 +4,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Deals Radar</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <a href="index.html" aria-label="Game Deals Radar — на главную">
-      <strong>Game Deals Radar</strong>
-    </a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="index.html" aria-label="Game Deals Radar — на главную">
+        <span class="site-logo__mark" aria-hidden="true">G</span>
+        <span class="site-logo__text">Game Deals <strong>Radar</strong></span>
+      </a>
 
-    <nav aria-label="Основная навигация">
-      <ul>
-        <li><a href="#filters">Фильтры</a></li>
-        <li><a href="#catalog">Каталог</a></li>
-        <li><a href="#about">О сервисе</a></li>
-      </ul>
-    </nav>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#filters">Фильтры</a></li>
+          <li><a class="site-nav__link" href="#catalog">Каталог</a></li>
+          <li><a class="site-nav__link" href="#about">О сервисе</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section aria-labelledby="page-title">
+  <main class="container page-main">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="hero__eyebrow">Скидки под контролем</p>
       <h1 id="page-title">Лучшие скидки на игры</h1>
-      <p>Ищите выгодные предложения и сравнивайте цены в удобной валюте.</p>
+      <p class="hero__lead">Ищите выгодные предложения и сравнивайте цены в удобной валюте.</p>
     </section>
 
-    <section id="filters" aria-labelledby="filters-title">
+    <section class="filters" id="filters" aria-labelledby="filters-title">
       <h2 id="filters-title">Фильтры</h2>
 
-      <form action="#catalog" method="get">
-        <label for="game-search">Поиск по названию</label>
-        <input
-          id="game-search"
-          name="query"
-          type="search"
-          placeholder="Например, Hades"
-        >
+      <form class="filters__form" action="#catalog" method="get">
+        <div class="form-field">
+          <label for="game-search">Поиск по названию</label>
+          <input
+            class="form-control"
+            id="game-search"
+            name="query"
+            type="search"
+            placeholder="Например, Hades"
+          >
+        </div>
 
-        <label for="currency">Валюта</label>
-        <select id="currency" name="currency">
-          <option value="rub">RUB — российский рубль</option>
-          <option value="eur">EUR — евро</option>
-          <option value="usd">USD — доллар США</option>
-        </select>
+        <div class="form-field">
+          <label for="currency">Валюта</label>
+          <select class="form-control" id="currency" name="currency">
+            <option value="rub">RUB — российский рубль</option>
+            <option value="eur">EUR — евро</option>
+            <option value="usd">USD — доллар США</option>
+          </select>
+        </div>
 
-        <button type="submit">Найти предложения</button>
+        <button class="button filters__submit" type="submit">Найти предложения</button>
       </form>
     </section>
 
-    <section id="catalog" aria-labelledby="catalog-title">
+    <section class="catalog" id="catalog" aria-labelledby="catalog-title">
       <h2 id="catalog-title">Каталог предложений</h2>
 
-      <article>
-        <h3>Hades</h3>
-        <p>Старая цена: <del>2 499 ₽</del></p>
-        <p>Новая цена: <strong>1 249 ₽</strong></p>
-        <p>Скидка: <strong>50%</strong></p>
-      </article>
+      <div class="deals-grid">
+        <article class="deal-card">
+          <header class="deal-card__header">
+            <p class="deal-card__meta">Экшен · Steam</p>
+            <h3 class="deal-card__title">Hades</h3>
+          </header>
+          <p class="deal-card__price deal-card__price--old">
+            <span>Старая цена</span>
+            <del>2 499 ₽</del>
+          </p>
+          <p class="deal-card__price deal-card__price--new">
+            <span>Новая цена</span>
+            <strong>1 249 ₽</strong>
+          </p>
+          <p class="deal-card__discount">
+            <span>Скидка</span>
+            <strong>−50%</strong>
+          </p>
+        </article>
 
-      <article>
-        <h3>Hollow Knight</h3>
-        <p>Старая цена: <del>1 499 ₽</del></p>
-        <p>Новая цена: <strong>749 ₽</strong></p>
-        <p>Скидка: <strong>50%</strong></p>
-      </article>
+        <article class="deal-card">
+          <header class="deal-card__header">
+            <p class="deal-card__meta">Приключение · GOG</p>
+            <h3 class="deal-card__title">Hollow Knight</h3>
+          </header>
+          <p class="deal-card__price deal-card__price--old">
+            <span>Старая цена</span>
+            <del>1 499 ₽</del>
+          </p>
+          <p class="deal-card__price deal-card__price--new">
+            <span>Новая цена</span>
+            <strong>749 ₽</strong>
+          </p>
+          <p class="deal-card__discount">
+            <span>Скидка</span>
+            <strong>−50%</strong>
+          </p>
+        </article>
 
-      <article>
-        <h3>Disco Elysium</h3>
-        <p>Старая цена: <del>3 999 ₽</del></p>
-        <p>Новая цена: <strong>999 ₽</strong></p>
-        <p>Скидка: <strong>75%</strong></p>
-      </article>
+        <article class="deal-card">
+          <header class="deal-card__header">
+            <p class="deal-card__meta">RPG · Steam</p>
+            <h3 class="deal-card__title">Disco Elysium</h3>
+          </header>
+          <p class="deal-card__price deal-card__price--old">
+            <span>Старая цена</span>
+            <del>3 999 ₽</del>
+          </p>
+          <p class="deal-card__price deal-card__price--new">
+            <span>Новая цена</span>
+            <strong>999 ₽</strong>
+          </p>
+          <p class="deal-card__discount">
+            <span>Скидка</span>
+            <strong>−75%</strong>
+          </p>
+        </article>
+      </div>
     </section>
 
-    <section id="about" aria-labelledby="about-title">
+    <section class="about" id="about" aria-labelledby="about-title">
       <h2 id="about-title">О сервисе</h2>
       <p>Game Deals Radar помогает находить скидки на игры в одном месте.</p>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Game Deals Radar</p>
+  <footer class="site-footer">
+    <p class="container site-footer__inner">&copy; 2026 Game Deals Radar</p>
   </footer>
 </body>
 </html>
