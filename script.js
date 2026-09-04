@@ -65,6 +65,18 @@ function formatPrice(amount) {
   return priceFormatter.format(amount);
 }
 
+function filterGamesByTitle(gameList, query) {
+  const normalizedQuery = query.trim().toLocaleLowerCase("ru");
+
+  if (!normalizedQuery) {
+    return [...gameList];
+  }
+
+  return gameList.filter((game) =>
+    game.title.toLocaleLowerCase("ru").includes(normalizedQuery),
+  );
+}
+
 function createDealCard(game) {
   const card = document.createElement("article");
   const cardHeader = document.createElement("header");
@@ -110,8 +122,25 @@ function createDealCard(game) {
 
 function renderGames(gameList) {
   const dealsGrid = document.querySelector(".deals-grid");
+  const resultsStatus = document.querySelector("#results-status");
 
   if (!dealsGrid) {
+    return;
+  }
+
+  dealsGrid.replaceChildren();
+
+  if (resultsStatus) {
+    resultsStatus.textContent = `Найдено игр: ${gameList.length}`;
+  }
+
+  if (gameList.length === 0) {
+    const emptyState = document.createElement("p");
+
+    emptyState.className = "deals-grid__empty";
+    emptyState.textContent = "Игры не найдены";
+    dealsGrid.append(emptyState);
+
     return;
   }
 
@@ -121,8 +150,31 @@ function renderGames(gameList) {
     fragment.append(createDealCard(game));
   });
 
-  dealsGrid.replaceChildren();
   dealsGrid.append(fragment);
+}
+
+const searchInput = document.querySelector("#game-search");
+const filtersForm = document.querySelector(".filters__form");
+
+function updateSearchResults() {
+  if (!searchInput) {
+    return;
+  }
+
+  const filteredGames = filterGamesByTitle(games, searchInput.value);
+
+  renderGames(filteredGames);
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", updateSearchResults);
+}
+
+if (filtersForm) {
+  filtersForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    updateSearchResults();
+  });
 }
 
 renderGames(games);

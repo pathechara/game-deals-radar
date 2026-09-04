@@ -294,10 +294,32 @@ section[id] {
   transform: translateY(0);
 }
 
+.catalog__status {
+  margin: -0.75rem 0 1.25rem;
+  color: var(--color-muted);
+  font-weight: 650;
+}
+
 .deals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
   gap: 1rem;
+}
+
+.deals-grid__empty {
+  display: grid;
+  min-height: 10rem;
+  margin: 0;
+  padding: 2rem 1rem;
+  place-items: center;
+  grid-column: 1 / -1;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-large);
+  color: var(--color-muted);
+  background: var(--color-surface);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .deal-card {
