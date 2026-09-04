@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Deals Radar</title>
+</head>
+<body>
+  <header>
+    <a href="index.html" aria-label="Game Deals Radar — на главную">
+      <strong>Game Deals Radar</strong>
+    </a>
+
+    <nav aria-label="Основная навигация">
+      <ul>
+        <li><a href="#filters">Фильтры</a></li>
+        <li><a href="#catalog">Каталог</a></li>
+        <li><a href="#about">О сервисе</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="page-title">
+      <h1 id="page-title">Лучшие скидки на игры</h1>
+      <p>Ищите выгодные предложения и сравнивайте цены в удобной валюте.</p>
+    </section>
+
+    <section id="filters" aria-labelledby="filters-title">
+      <h2 id="filters-title">Фильтры</h2>
+
+      <form action="#catalog" method="get">
+        <label for="game-search">Поиск по названию</label>
+        <input
+          id="game-search"
+          name="query"
+          type="search"
+          placeholder="Например, Hades"
+        >
+
+        <label for="currency">Валюта</label>
+        <select id="currency" name="currency">
+          <option value="rub">RUB — российский рубль</option>
+          <option value="eur">EUR — евро</option>
+          <option value="usd">USD — доллар США</option>
+        </select>
+
+        <button type="submit">Найти предложения</button>
+      </form>
+    </section>
+
+    <section id="catalog" aria-labelledby="catalog-title">
+      <h2 id="catalog-title">Каталог предложений</h2>
+
+      <article>
+        <h3>Hades</h3>
+        <p>Старая цена: <del>2 499 ₽</del></p>
+        <p>Новая цена: <strong>1 249 ₽</strong></p>
+        <p>Скидка: <strong>50%</strong></p>
+      </article>
+
+      <article>
+        <h3>Hollow Knight</h3>
+        <p>Старая цена: <del>1 499 ₽</del></p>
+        <p>Новая цена: <strong>749 ₽</strong></p>
+        <p>Скидка: <strong>50%</strong></p>
+      </article>
+
+      <article>
+        <h3>Disco Elysium</h3>
+        <p>Старая цена: <del>3 999 ₽</del></p>
+        <p>Новая цена: <strong>999 ₽</strong></p>
+        <p>Скидка: <strong>75%</strong></p>
+      </article>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">О сервисе</h2>
+      <p>Game Deals Radar помогает находить скидки на игры в одном месте.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Game Deals Radar</p>
+  </footer>
+</body>
+</html>
