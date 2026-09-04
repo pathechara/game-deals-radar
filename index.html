@@ -36,7 +36,7 @@
       <h2 id="filters-title">Фильтры</h2>
 
       <form class="filters__form" action="#catalog" method="get">
-        <div class="form-field">
+        <div class="form-field filters__field--search">
           <label for="game-search">Поиск по названию</label>
           <input
             class="form-control"
@@ -49,16 +49,33 @@
 
         <div class="form-field">
           <label for="currency">Валюта</label>
-          <select class="form-control" id="currency" name="currency">
-            <option value="pln">PLN — польский злотый</option>
-            <option value="uah">UAH — украинская гривна</option>
-            <option value="eur">EUR — евро</option>
-            <option value="usd">USD — доллар США</option>
+          <select
+            class="form-control"
+            id="currency"
+            name="currency"
+            aria-describedby="currency-rates-note"
+          >
+            <option value="PLN">PLN — польский злотый</option>
+            <option value="UAH">UAH — украинская гривна</option>
+            <option value="EUR">EUR — евро</option>
+            <option value="USD">USD — доллар США</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="sort-by">Сортировка</label>
+          <select class="form-control" id="sort-by" name="sortBy">
+            <option value="discount-desc">По размеру скидки — сначала большая</option>
+            <option value="price-asc">По цене — сначала дешёвые</option>
+            <option value="price-desc">По цене — сначала дорогие</option>
+            <option value="title-asc">По названию — А–Я</option>
           </select>
         </div>
 
         <button class="button filters__submit" type="submit">Найти предложения</button>
       </form>
+
+      <p class="filters__note" id="currency-rates-note">Курсы валют демонстрационные</p>
     </section>
 
     <section class="catalog" id="catalog" aria-labelledby="catalog-title">
