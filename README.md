@@ -15,7 +15,7 @@ Build a portfolio-ready application where users can:
 ## Roadmap
 
 - [x] Semantic HTML structure
-- [ ] Responsive CSS layout
+- [x] Responsive CSS layout
 - [ ] JavaScript search, filters, and sorting
 - [ ] External API integration and loading/error states
 - [ ] TypeScript and React migration
@@ -23,7 +23,7 @@ Build a portfolio-ready application where users can:
 
 ## Current status
 
-**Iteration 2 — responsive CSS**
+**Iteration 3 — JavaScript data rendering**
 
 This repository documents the full learning path from the first HTML page to a production-style React application. Work is organised through GitHub Issues and small, meaningful commits.
 
